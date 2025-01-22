@@ -1,0 +1,22 @@
+The Big-O notation is used to tell the complexity of an algorithm. 
+
+VERY GOOD:
+	O(1) - Constant -> The code doesn't depend on the number of entry elements, that's why it's constant.
+Adding a new element on the entry will not increase the cost of the algorithm.
+	O(log n) - Logarithm -> The operation number will increase with more entries, but in less quantity
+than the number of items on the entries. An example of that is the Binary Search.
+
+OK:
+	O(n) - Linear -> The number of operations will increase directly proportional with the increase
+of the number of entries. This happens on simple iterations on the entries.
+	
+BAD:
+	O(n log n) -> Almost-Linear ->  It's the result of the operations (log n), executed n times.
+The Merge Sort is an example of that.
+
+VERY BAD:
+	O(n^2) -> Quadratic -> It happens when the itens are processed in pairs. An example of that
+are two aligned iterations. For an array of 20 itens, the execution will happen 20*20 times.
+	O(2^n) -> Exponencial -> With the increase of the entries, the complexity increase exponentially.
+An example of that is the Tower of Hanoi algorithm.
+	O(n!) -> Fatorial -> The number of instructions executed increase very fast with little increase on entries.
