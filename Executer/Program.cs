@@ -1,4 +1,6 @@
-﻿using Problems;
+﻿using BenchmarkDotNet.Running;
+using Problems;
 
 var mergeSortedArray = new MergeSortedArray();
-mergeSortedArray.ExecuteSolution();
+mergeSortedArray.ExecuteGoodSolution();
+BenchmarkRunner.Run<MergeSortedArray>();
