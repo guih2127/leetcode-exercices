@@ -1,6 +1,6 @@
 ﻿using BenchmarkDotNet.Running;
 using Problems;
 
-var mergeSortedArray = new MergeSortedArray();
-mergeSortedArray.ExecuteGoodSolution();
-BenchmarkRunner.Run<MergeSortedArray>();
+var removeElement = new RemoveElement();
+removeElement.ExecuteBadSolution();
+// BenchmarkRunner.Run<RemoveElement>();

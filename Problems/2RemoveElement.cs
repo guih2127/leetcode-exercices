@@ -11,24 +11,111 @@ public class RemoveElement
     // Change the array nums such that the first k elements of nums contain the elements which are not equal to val.
     // The remaining elements of nums are not important as well as the size of nums.
     // Return k.
+
+    private int GoodSolution(int[] nums, int val)
+    {
+        var notValOccurrences = 0;
+        var firstPointer = 0;
+        var secondPointer = nums.Length - 1;
+        
+        for (var i = 0; i < nums.Length; i++)
+        {
+            if (nums[i] != val)
+            {
+                notValOccurrences++;   
+            }
+        }
+        
+        while (secondPointer > firstPointer)
+        {
+            if (nums[firstPointer] == val)
+            {
+                if (nums[secondPointer] != val)
+                {
+                    nums[firstPointer] = nums[secondPointer];
+                    nums[secondPointer] = val;
+                
+                    firstPointer++;
+                    secondPointer--;
+                }
+                else
+                {
+                    secondPointer--;
+                }
+            }
+            else
+            {
+                firstPointer++;
+            }
+        }
+
+        return notValOccurrences;
+    }
     
     private int BadSolution(int[] nums, int val)
     {
-        return 0;
+        var notValOccurrences = 0;
+        var firstPointer = 0;
+        var secondPointer = nums.Length - 1;
+        
+        for (var i = 0; i < nums.Length; i++)
+        {
+            if (nums[i] != val)
+            {
+                notValOccurrences++;   
+            }
+        }
+        
+        while (secondPointer > firstPointer)
+        {
+            if (nums[firstPointer] == val)
+            {
+                if (nums[secondPointer] != val)
+                {
+                    nums[firstPointer] = nums[secondPointer];
+                    nums[secondPointer] = val;
+                
+                    firstPointer++;
+                    secondPointer--;
+                }
+                else
+                {
+                    secondPointer--;
+                }
+            }
+            else
+            {
+                firstPointer++;
+            }
+        }
+
+        return notValOccurrences;
     }
     
-    public void ExecuteSolution()
+    [Benchmark]
+    private void ExecuteSolution(Func<int[], int, int> solution)
     {
-        var nums = new int[3]
+        var nums = new[]
         {
-            7,9,12
+            0,1,2,2,3,0,4,2
         };
-        
-        const int val = 7;
-        var expectedNums = new int[2];
+
+        const int val = 2;
         var k = BadSolution(nums, val);
         
         Console.WriteLine(k);
-        ArrayUtils.PrintArray(expectedNums);
+        ArrayUtils.PrintArray(nums);
+    }
+    
+    [Benchmark]
+    public void ExecuteGoodSolution()
+    {
+        ExecuteSolution(GoodSolution);
+    }
+    
+    [Benchmark]
+    public void ExecuteBadSolution()
+    {
+        ExecuteSolution(BadSolution);
     }
 }
