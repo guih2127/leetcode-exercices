@@ -2,5 +2,5 @@
 using Problems;
 
 var removeElement = new RemoveElement();
-removeElement.ExecuteBadSolution();
+removeElement.ExecuteGoodSolution();
 // BenchmarkRunner.Run<RemoveElement>();
