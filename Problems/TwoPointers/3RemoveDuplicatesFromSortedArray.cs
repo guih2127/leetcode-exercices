@@ -1,7 +1,6 @@
 using BenchmarkDotNet.Attributes;
-using Common;
 
-namespace Problems;
+namespace Problems.TwoPointers;
 
 public class RemoveDuplicatesFromSortedArray 
 {
@@ -12,7 +11,7 @@ public class RemoveDuplicatesFromSortedArray
     // The remaining elements of nums are not important as well as the size of nums.
     // Return k.
 
-    private int GoodSolution(int[] nums)
+    private int Solution(int[] nums)
     {
         var i = 0;
 
@@ -42,8 +41,8 @@ public class RemoveDuplicatesFromSortedArray
     }
     
     [Benchmark]
-    public void ExecuteGoodSolution()
+    public void ExecuteSolution()
     {
-        ExecuteSolution(GoodSolution);
+        ExecuteSolution(Solution);
     }
 }

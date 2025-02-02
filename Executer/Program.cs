@@ -1,6 +1,6 @@
-﻿using BenchmarkDotNet.Running;
-using Problems;
+﻿using Problems;
+using Problems.TwoPointers;
 
-var removeElement = new RemoveDuplicatesFromSortedArray();
-removeElement.ExecuteGoodSolution();
+var removeElement = new RemoveDuplicatesFromSortedArray2();
+removeElement.ExecuteSolution();
 // BenchmarkRunner.Run<RemoveElement>();

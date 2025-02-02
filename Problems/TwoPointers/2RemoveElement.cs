@@ -1,7 +1,7 @@
 using BenchmarkDotNet.Attributes;
 using Common;
 
-namespace Problems;
+namespace Problems.TwoPointers;
 
 public class RemoveElement
 {
