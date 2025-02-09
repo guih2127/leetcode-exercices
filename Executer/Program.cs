@@ -1,6 +1,4 @@
-﻿using Problems;
-using Problems.TwoPointers;
+﻿using Problems.HashMap;
 
-var removeElement = new RemoveDuplicatesFromSortedArray2();
-removeElement.ExecuteSolution();
-// BenchmarkRunner.Run<RemoveElement>();
+var majorityElement = new MajorityElement();
+majorityElement.ExecuteGoodSolution();

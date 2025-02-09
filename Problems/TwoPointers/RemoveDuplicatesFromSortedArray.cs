@@ -1,4 +1,5 @@
 using BenchmarkDotNet.Attributes;
+using Common;
 
 namespace Problems.TwoPointers;
 
@@ -13,18 +14,18 @@ public class RemoveDuplicatesFromSortedArray
 
     private int Solution(int[] nums)
     {
-        var i = 0;
+        var firstPointer = 0;
 
-        for (var j = 1; j < nums.Length; j++)
+        for (var secondPointer = 1; secondPointer < nums.Length; secondPointer++)
         {
-            if (nums[i] != nums[j])
+            if (nums[firstPointer] != nums[secondPointer])
             {
-                i++;
-                nums[i] = nums[j];
+                firstPointer++;
+                nums[firstPointer] = nums[secondPointer];
             }
         }
-        
-        return i + 1;
+
+        return firstPointer + 1;
     }
     
     [Benchmark]
@@ -32,11 +33,12 @@ public class RemoveDuplicatesFromSortedArray
     {
         var nums = new[]
         {
-            1,1,2
+            0,0,1,1,1,2,2,3,3,4
         };
 
         var k = solution(nums);
         
+        ArrayUtils.PrintArray(nums);
         Console.WriteLine(k);
     }
     

@@ -15,7 +15,7 @@ public class RemoveElement
     private int GoodSolution(int[] nums, int val)
     {
         // FIRST STEP -> Create the first pointer
-        int i = 0;
+        var firstPointer = 0;
 
         // SECOND STEP -> Create a loop to iterate the array, creating the second pointer
         // As the first pointer increases ONLY if the element is different than val, the second pointer will NEVER be besides
@@ -25,18 +25,17 @@ public class RemoveElement
         // For the last, if the element is different than val, we change the value of the element on the first pointer to the element
         // on the second pointer. With that, we put the numbers different than val at the beginning of the array. We don't care about the 
         // last values. We just want the elements different than val to be at the beginning.
-        
-        for (int j = 0; j < nums.Length; j++)
+        for (var secondPointer = 0; secondPointer < nums.Length; secondPointer++)
         {
-            if (nums[j] != val)
+            if (nums[secondPointer] != val)
             {
-                nums[i] = nums[j];
-                i++;
+                nums[firstPointer] = nums[secondPointer];
+                firstPointer++;
             }
         }
 
         // THIRD STEP -> Return the first pointer
-        return i;
+        return firstPointer;
     }
     
     private int BadSolution(int[] nums, int val)
@@ -84,7 +83,7 @@ public class RemoveElement
     {
         var nums = new[]
         {
-            0,1,2,2,3,0,4,2
+            3,2,2,3
         };
 
         const int val = 2;
