@@ -1,6 +1,6 @@
 using Common;
 
-namespace Problems.TwoPointers;
+namespace Problems;
 
 public class RotateArray
 {

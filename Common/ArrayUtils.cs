@@ -6,4 +6,9 @@ public static class ArrayUtils
     {
         Console.WriteLine(String.Join(", ", array));
     }
+    
+    public static void PrintDictionary<T,TS>(Dictionary<T,TS> dict)
+    {
+        Console.WriteLine(String.Join(", ", dict));
+    }
 }

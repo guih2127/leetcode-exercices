@@ -1,4 +1,4 @@
-﻿using Problems.HashMap;
+﻿using Problems;
 
-var majorityElement = new MajorityElement();
-majorityElement.ExecuteGoodSolution();
+var sameCharacter = new WordPattern();
+sameCharacter.ExecuteSolution();

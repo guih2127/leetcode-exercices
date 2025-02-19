@@ -1,6 +1,4 @@
-using System.Collections;
-
-namespace Problems.HashMap;
+namespace Problems;
 
 public class MajorityElement
 {
