@@ -1,4 +1,4 @@
 ﻿using Problems;
 
-var sameCharacter = new WordPattern();
+var sameCharacter = new IsSubsequence();
 sameCharacter.ExecuteSolution();
